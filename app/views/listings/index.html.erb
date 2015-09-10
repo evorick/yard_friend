@@ -20,7 +20,7 @@
   <tbody>
     <% @listings.each do |listing| %>
       <tr>
-        <td><%= listing.user %></td>
+        <td><%= listing.user.name %></td>
         <td><%= listing.name %></td>
         <td><%= listing.address %></td>
         <td><%= listing.description %></td>
