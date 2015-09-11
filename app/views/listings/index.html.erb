@@ -1,41 +1,43 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>Yard Space For Rent:</h1>
+  <div class="row">   
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              
+                <th scope="row" class="col-md-1">User</th>
+                <th scope="row" class="col-md-2">Name</th>
+                <th scope="row" class="col-md-2">Address</th>
+                <th scope="row" class="col-md-4">Description</th>
+                <th scope="row" class="col-md-1">Availability from</th>
+                <th scope="row" class="col-md-1">Availability to</th>
+                <th scope="row" class="col-md-1">Sqft</th>
+                <th scope="row" class="col-md-1">Price</th>
+                <th colspan="3"></th>
+            </tr>
+          </thead>
 
-<h1>Listing Listings</h1>
+          <tbody>
+            <% @listings.each do |listing| %>
+              <tr>
+                <td scope="row" class="col-md-1"><%= listing.user.name %></td>
+                <td scope="row" class="col-md-2"><%= listing.name %></td>
+                <td scope="row" class="col-md-2"><%= listing.address %></td>
+                <td scope="row" class="col-md-4"><%= listing.description %></td>
+                <td scope="row" class="col-md-1"><%= listing.availability_from %></td>
+                <td scope="row" class="col-md-1"><%= listing.availability_to %></td>
+                <td scope="row" class="col-md-1"><%= listing.sqft %></td>
+                <td scope="row" class="col-md-1"><%= listing.price %></td>
+                <td scope="row" class="col-md-1"><%= link_to fa_icon("external-link"), listing %></td>
+                <td scope="row" class="col-md-1"><%= link_to fa_icon("pencil"), edit_listing_path(listing) %></td>
+                <td scope="row" class="col-md-1"><%= link_to fa_icon("trash-o"), listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td class="btn btn-success"><%= link_to 'Make A Reservation', new_reservation_path %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div> <!-- row -->
+      <br>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Description</th>
-      <th>Availability from</th>
-      <th>Availability to</th>
-      <th>Sqft</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @listings.each do |listing| %>
-      <tr>
-        <td><%= listing.user.name %></td>
-        <td><%= listing.name %></td>
-        <td><%= listing.address %></td>
-        <td><%= listing.description %></td>
-        <td><%= listing.availability_from %></td>
-        <td><%= listing.availability_to %></td>
-        <td><%= listing.sqft %></td>
-        <td><%= listing.price %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Listing', new_listing_path %>
+    <%= link_to 'New Listing', new_listing_path %>
+</div> <!-- container -->
