@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :reservations
   resources :listings
-  root to: 'listings#index'
+  root to: 'rent#yards'
   devise_for :users
   resources :users
 end
