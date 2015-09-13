@@ -20,15 +20,15 @@
           <tbody>
             <% @listings.each do |listing| %>
               <tr>
-                <td scope="row" class="col-md-1"><%= listing.user.name %></td>
-                <td scope="row" class="col-md-2"><%= listing.name %></td>
-                <td scope="row" class="col-md-2"><%= listing.address %></td>
-                <td scope="row" class="col-md-4"><%= listing.description %></td>
-                <td scope="row" class="col-md-1"><%= listing.availability_from %></td>
+                <td><%= listing.user.name %></td>
+                <td><%= listing.name %></td>
+                <td><%= listing.address %></td>
+                <td><%= listing.description %></td>
+                <td><%= listing.availability_from %></td>
                 <td scope="row" class="col-md-1"><%= listing.availability_to %></td>
-                <td scope="row" class="col-md-1"><%= listing.sqft %></td>
-                <td scope="row" class="col-md-1"><%= listing.price %></td>
-                <td scope="row" class="col-md-1"><%= link_to fa_icon("external-link"), listing %></td>
+                <td><%= listing.sqft %></td>
+                <td><%= listing.price %></td>
+                <td><%= link_to fa_icon("external-link"), listing %></td>
                 <td scope="row" class="col-md-1"><%= link_to fa_icon("pencil"), edit_listing_path(listing) %></td>
                 <td scope="row" class="col-md-1"><%= link_to fa_icon("trash-o"), listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 <td class="btn btn-success"><%= link_to 'Make A Reservation', new_reservation_path %></td>
