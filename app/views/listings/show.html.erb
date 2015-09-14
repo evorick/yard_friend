@@ -1,50 +1,49 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p>
+    <strong>User:</strong>
+    <%= @listing.user.name %>
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @listing.user.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @listing.name %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @listing.name %>
-</p>
+  <p>
+    <strong>Address:</strong>
+    <%= @listing.address %>
+  </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @listing.address %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @listing.description %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @listing.description %>
-</p>
+  <p>
+    <strong>Availability from:</strong>
+    <%= @listing.availability_from %>
+  </p>
 
-<p>
-  <strong>Availability from:</strong>
-  <%= @listing.availability_from %>
-</p>
+  <p>
+    <strong>Availability to:</strong>
+    <%= @listing.availability_to %>
+  </p>
 
-<p>
-  <strong>Availability to:</strong>
-  <%= @listing.availability_to %>
-</p>
+  <p>
+    <strong>Sqft:</strong>
+    <%= @listing.sqft %>
+  </p>
 
-<p>
-  <strong>Sqft:</strong>
-  <%= @listing.sqft %>
-</p>
+  <p>
+    <strong>Price:</strong>
+    <%= number_to_currency(@listing.price, :unit => "$") %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @listing.price %>
-</p>
+  <p>
+    <strong>Photo:</strong>
+    <%= image_tag @listing.image.url %>
+  </p>
 
-<p>
-  <strong>Photo:</strong>
-  <%= image_tag @listing.image.url %>
-  <%= image_tag @listing.image.url(:medium) %>
-</p>
-
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+  <%= link_to 'Edit', edit_listing_path(@listing) %> |
+  <%= link_to 'Back', listings_path %>
+</div>

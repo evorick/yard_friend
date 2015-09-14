@@ -8,6 +8,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'font-awesome-rails'
 gem "paperclip", "~> 4.3"
+gem "timeliness"
+gem 'jc-validates_timeliness'
 
 group :development, :test do
   gem 'byebug'
