@@ -23,6 +23,7 @@ gem 'thin'
 group :development do
   gem 'better_errors'
   gem 'rails_layout'
+  gem 'quiet_assets'
 end
 group :development, :test do
   gem 'rubocop'
