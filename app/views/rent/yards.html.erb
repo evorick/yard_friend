@@ -57,16 +57,16 @@
 
         
 
-            <% @rents.each do |listing| %>
+            <% @listings.each do |listing| %>
                 <div class="col-md-3 col-sm-6 hero-feature">
                     <div class="thumbnail">
                         <img src="http://placehold.it/800x500" alt="">
                         <div class="caption">
                             <h3><%= listing.name %></h3>
                             <p><%= listing.price %></p>
-                            <p>
-                                <a class="btn btn-primary"><%= link_to 'More Info!', rent_url %></a>
-                            </p>
+                        
+                            <div class="btn btn-primary"><%= link_to 'More Info!', listing_path(listing.id) %></div>
+                        
                         </div>
                     </div>
                 </div>
