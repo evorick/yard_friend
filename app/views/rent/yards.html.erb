@@ -28,7 +28,6 @@
 
 <body>
 
-
     <!-- Page Content -->
     <div class="container">
 
@@ -55,8 +54,6 @@
         <!-- Page Features -->
         <div class="row text-center">
 
-        
-
             <% @listings.each do |listing| %>
                 <div class="col-md-3 col-sm-6 hero-feature">
                     <div class="thumbnail">
@@ -64,9 +61,7 @@
                         <div class="caption">
                             <h3><%= listing.name %></h3>
                             <p><%= number_to_currency(listing.price, :unit => "$") %></p>
-                        
                             <div><%= link_to 'More Info!', listing_path(listing.id), class: "btn btn-primary", id: "white-text" %></div>
-                        
                         </div>
                     </div>
                 </div>
